@@ -49,28 +49,7 @@ def root(name, &block)
   Unit.new(name, nil, &block).run
 end
 
+load 'company.qm'
 
-root 'SoftServe'do
-  add_employee 'emp2' do
-  end
-  add_employee 'emp3' do
-  end
-  add_unit 'first' do
-    add_unit 'subfirst' do
-      add_employee 'emp1' do
-      end
-      add_employee 'emp2' do
-      end
-    end
-  end
-  add_unit 'second' do
-    add_unit 'subsecond' do
-    end
-  end
-  add_unit 'second' do
-    add_unit 'subsecond' do
-    end
-  end
-end
 
 $g.output( :png => "graph_company.png" )
